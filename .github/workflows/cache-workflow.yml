@@ -3,12 +3,12 @@ name: Cache Dependencies
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   cache-job:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
         id: cache
         uses: actions/cache@v4
         with:
-          path: ~/.m2  # Path to cache (change as per your language/dependencies)
+          path: ~/.m2  # Change to your dependency folder, e.g. ~/.npm or ~/.cache/pip
           key: cache-4373495
 
       - name: prime-cache-4373495
